@@ -3,9 +3,9 @@
   connection: local
   tasks:
     - name: Wait for k8s port 22
-    wait_for:
-      host: "192.168.199.216"
-      port: 22
+      wait_for:
+        host: "192.168.199.216"
+        port: 22
       
 - name: Deploy bot
   hosts: localhost
