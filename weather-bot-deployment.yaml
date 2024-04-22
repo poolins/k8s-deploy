@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-bot-deployment
+  namespace: glezova-pe
+  labels:
+    app: weather-bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weather-bot
+  template:
+    metadata:
+      labels:
+        app: weather-bot
+    spec:
+      containers:
+      - name: weather-bot
+        image: poolins/weather-bot:latest
+        ports:
+        - containerPort: 5000
+
